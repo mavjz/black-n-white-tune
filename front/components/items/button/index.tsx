@@ -5,7 +5,7 @@ import { ButtonType } from './models';
 
 const Button = ({
     isMUIIcon,
-    MUIIcon,
+    children,
     isLink,
     link,
     isImage,
@@ -22,11 +22,11 @@ const Button = ({
             {isMUIIcon ? (
                 isLink ? (
                     <Link href={link} className={className}>
-                        {MUIIcon}
+                        {children}
                     </Link>
                 ) : (
                     <button className={buttonClassName} onClick={onClick} type={buttonType}>
-                        {MUIIcon}
+                        {children}
                     </button>
                 )
             ) : isLink ? (

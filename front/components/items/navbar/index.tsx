@@ -1,6 +1,6 @@
 import React from 'react';
-import ImageFramed from '../image-framed';
 import Button from '../button';
+import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlinedIcon';
 
 const Navbar = () => {
     return (
@@ -13,6 +13,9 @@ const Navbar = () => {
                 isLink
                 link="/"
             />
+            <Button isMUIIcon isLink link="/Shop-cart-link" className="">
+                <LocalMallOutlinedIcon />
+            </Button>
         </div>
     );
 };
