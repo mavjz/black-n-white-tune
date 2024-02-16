@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageFramed from '../image-framed';
+import Button from '../button';
 
 const Navbar = () => {
     return (
@@ -8,6 +9,14 @@ const Navbar = () => {
                 className="h-9 w-20"
                 alt="Black'n'White Tune"
                 src="/media/logo-picture.png"
+            />
+            <Button
+                isImage
+                image="/Zdjęcie-koszyka"
+                alt="Shop cart"
+                isLink
+                link="/Link-do-sklepu"
+                className=""
             />
         </div>
     );
