@@ -2,24 +2,35 @@ export type ButtonType =
     | {
           isLink?: boolean;
           isImage?: boolean;
+          isMUIIcon?: boolean;
           className: string;
       } & (
           | {
-                isLink: true;
-                link: string;
-                onClick?: never;
-                buttonType?: never;
-                buttonClassName?: never;
+                isMUIIcon: true;
+                MUIIcon: React.ReactNode;
             }
           | {
-                isLink: false;
-                link?: never;
-                onClick: () => {};
-                buttonType: 'button' | 'submit' | 'reset' | undefined;
-                buttonClassName: string;
+                isMUIIcon?: false;
+                MUIIcon?: never;
             }
       ) &
           (
+              | {
+                    isLink: true;
+                    link: string;
+                    onClick?: never;
+                    buttonType?: never;
+                    buttonClassName?: never;
+                }
+              | {
+                    isLink?: false;
+                    link?: never;
+                    onClick: () => {};
+                    buttonType: 'button' | 'submit' | 'reset' | undefined;
+                    buttonClassName: string;
+                }
+          ) &
+          (
               | { isImage: true; image: string; alt: string; text?: never }
-              | { isImage: false; image?: never; alt?: never; text: string }
+              | { isImage?: false; image?: never; alt?: never; text: string }
           );

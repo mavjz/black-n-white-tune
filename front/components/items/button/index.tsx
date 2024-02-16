@@ -4,6 +4,8 @@ import ImageFramed from '../image-framed';
 import { ButtonType } from './models';
 
 const Button = ({
+    isMUIIcon,
+    MUIIcon,
     isLink,
     link,
     isImage,
@@ -17,7 +19,17 @@ const Button = ({
 }: ButtonType) => {
     return (
         <React.Fragment>
-            {isLink ? (
+            {isMUIIcon ? (
+                isLink ? (
+                    <Link href={link} className={className}>
+                        {MUIIcon}
+                    </Link>
+                ) : (
+                    <button className={buttonClassName} onClick={onClick} type={buttonType}>
+                        {MUIIcon}
+                    </button>
+                )
+            ) : isLink ? (
                 isImage ? (
                     <Link href={link}>
                         <ImageFramed src={image} className={className} alt={alt} />
