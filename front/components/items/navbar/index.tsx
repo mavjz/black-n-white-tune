@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../button';
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -71,6 +71,12 @@ const Navbar = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
     const TEMPpages = ['Strona', 'Strona', 'Strona', 'Strona', 'Strona'];
     const isWide = useMedia({ maxWidth: '768px' });
+
+    useEffect(() => {
+        if (!isWide) {
+            setIsOpenMenu(false);
+        }
+    }, [isWide]);
 
     return (
         <React.Fragment>
