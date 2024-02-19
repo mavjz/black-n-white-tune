@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import Button from '../button';
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import { motion, spring } from 'framer-motion';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { motion } from 'framer-motion';
 
-const navbarVariants = {
+const navbarMenuVariants = {
     open: {
         opacity: 1,
         y: 0,
         transition: {
             bounce: 0,
             duration: 1,
+            delayChildren: 0.9,
+            staggerChildren: 0.2,
         },
     },
     closed: {
@@ -18,26 +21,72 @@ const navbarVariants = {
         y: '-100%',
         transition: {
             bounce: 0,
-            duration: 1,
+            delay: 0.5,
+            duration: 0.5,
+            staggerChildren: 0.1,
+            staggerDirection: -1,
+        },
+    },
+};
+
+const navbarMenusElementsVariants = {
+    open: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            bounce: 0,
+        },
+    },
+    closed: {
+        opacity: 0,
+        x: '-100%',
+        transition: {
+            bounce: 0,
+        },
+    },
+};
+
+const navbarMenuButtonVariants = {
+    open: {
+        opacity: [1, 0, 1],
+        rotate: 360,
+        transition: {
+            bounce: 0,
+            duration: 0.5,
+        },
+    },
+    closed: {
+        opacity: [1, 0, 1],
+        rotate: 0,
+        transition: {
+            bounce: 0,
+            duration: 0.5,
         },
     },
 };
 
 const Navbar = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
+    const TEMPpages = ['Strona', 'Strona', 'Strona', 'Strona', 'Strona'];
 
     return (
         <React.Fragment>
             <motion.div
-                className="h-[calc(100%-2.8rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6"
+                className="h-[calc(100%-2.75rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6"
                 animate={isOpenMenu ? 'open' : 'closed'}
                 initial={false}
-                variants={navbarVariants}
+                variants={navbarMenuVariants}
             >
-                <Button isLink link="/" text="Strona 1" className="text-white text-xl" />
-                <Button isLink link="/" text="Strona 2" className="text-white text-xl" />
-                <Button isLink link="/" text="Strona 3" className="text-white text-xl" />
-                <Button isLink link="/" text="Strona 4" className="text-white text-xl" />
+                {TEMPpages.map((page, index) => (
+                    <motion.div variants={navbarMenusElementsVariants} key={index}>
+                        <Button
+                            isLink
+                            link="/"
+                            text={page + ' ' + `${index + 1}`}
+                            className="text-white text-xl"
+                        />
+                    </motion.div>
+                ))}
             </motion.div>
             <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between px-5">
                 <Button
@@ -59,7 +108,17 @@ const Navbar = () => {
                         buttonClassName=""
                         buttonType="button"
                     >
-                        <MenuRoundedIcon htmlColor="white" fontSize="large" />
+                        <motion.div
+                            animate={isOpenMenu ? 'open' : 'closed'}
+                            initial={false}
+                            variants={navbarMenuButtonVariants}
+                        >
+                            {isOpenMenu ? (
+                                <CloseRoundedIcon htmlColor="white" fontSize="large" />
+                            ) : (
+                                <MenuRoundedIcon htmlColor="white" fontSize="large" />
+                            )}
+                        </motion.div>
                     </Button>
                 </div>
             </div>
