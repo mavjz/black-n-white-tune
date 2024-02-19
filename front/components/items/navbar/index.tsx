@@ -29,7 +29,7 @@ const Navbar = () => {
     return (
         <React.Fragment>
             <motion.div
-                className="h-[calc(100%-2.9rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-12 py-10 gap-y-6"
+                className="h-[calc(100%-2.8rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6"
                 animate={isOpenMenu ? 'open' : 'closed'}
                 initial={false}
                 variants={navbarVariants}
