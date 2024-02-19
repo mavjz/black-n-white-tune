@@ -3,7 +3,9 @@ import Button from '../button';
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { motion } from 'framer-motion';
+import { useMedia } from 'use-media';
 
 const navbarMenuVariants = {
     open: {
@@ -68,6 +70,7 @@ const navbarMenuButtonVariants = {
 const Navbar = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
     const TEMPpages = ['Strona', 'Strona', 'Strona', 'Strona', 'Strona'];
+    const isWide = useMedia({ maxWidth: '768px' });
 
     return (
         <React.Fragment>
@@ -97,29 +100,58 @@ const Navbar = () => {
                     isLink
                     link="/"
                 />
-                <div className="flex gap-x-4 justify-center items-center">
+
+                <div className="flex gap-x-4 justify-center items-center md:gap-x-6">
+                    {!isWide &&
+                        TEMPpages.map((page, index) => (
+                            <motion.div
+                                whileHover={{
+                                    fontSize: '17px',
+                                    transition: {
+                                        duration: 1,
+                                    },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                                key={index}
+                            >
+                                <Button
+                                    isLink
+                                    link="/"
+                                    text={page + ' ' + `${index + 1}`}
+                                    className="text-white text-l"
+                                />
+                            </motion.div>
+                        ))}
+
+                    <Button isMUIIcon isLink link="/log-in-link">
+                        <PersonOutlineOutlinedIcon htmlColor="white" fontSize="medium" />
+                    </Button>
+
                     <Button isMUIIcon isLink link="/Shop-cart-link">
                         <LocalMallOutlinedIcon htmlColor="white" fontSize="medium" />
                     </Button>
-                    <Button
-                        isMUIIcon
-                        className="h-6 w-6"
-                        onClick={() => setIsOpenMenu(!isOpenMenu)}
-                        buttonClassName=""
-                        buttonType="button"
-                    >
-                        <motion.div
-                            animate={isOpenMenu ? 'open' : 'closed'}
-                            initial={false}
-                            variants={navbarMenuButtonVariants}
+
+                    {isWide && (
+                        <Button
+                            isMUIIcon
+                            className="h-6 w-6"
+                            onClick={() => setIsOpenMenu(!isOpenMenu)}
+                            buttonClassName=""
+                            buttonType="button"
                         >
-                            {isOpenMenu ? (
-                                <CloseRoundedIcon htmlColor="white" fontSize="large" />
-                            ) : (
-                                <MenuRoundedIcon htmlColor="white" fontSize="large" />
-                            )}
-                        </motion.div>
-                    </Button>
+                            <motion.div
+                                animate={isOpenMenu ? 'open' : 'closed'}
+                                initial={false}
+                                variants={navbarMenuButtonVariants}
+                            >
+                                {isOpenMenu ? (
+                                    <CloseRoundedIcon htmlColor="white" fontSize="large" />
+                                ) : (
+                                    <MenuRoundedIcon htmlColor="white" fontSize="large" />
+                                )}
+                            </motion.div>
+                        </Button>
+                    )}
                 </div>
             </div>
         </React.Fragment>
