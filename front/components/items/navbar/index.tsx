@@ -2,12 +2,43 @@ import React, { useState } from 'react';
 import Button from '../button';
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { motion, spring } from 'framer-motion';
+
+const navbarVariants = {
+    open: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            bounce: 0,
+            duration: 1,
+        },
+    },
+    closed: {
+        opacity: 0,
+        y: '-100%',
+        transition: {
+            bounce: 0,
+            duration: 1,
+        },
+    },
+};
 
 const Navbar = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
+
     return (
         <React.Fragment>
-            <div className="h-full w-full absolute bg-slate-950"></div>
+            <motion.div
+                className="h-[calc(100%-2.9rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-12 py-10 gap-y-6"
+                animate={isOpenMenu ? 'open' : 'closed'}
+                initial={false}
+                variants={navbarVariants}
+            >
+                <Button isLink link="/" text="Strona 1" className="text-white text-xl" />
+                <Button isLink link="/" text="Strona 2" className="text-white text-xl" />
+                <Button isLink link="/" text="Strona 3" className="text-white text-xl" />
+                <Button isLink link="/" text="Strona 4" className="text-white text-xl" />
+            </motion.div>
             <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between px-5">
                 <Button
                     isImage
@@ -24,7 +55,7 @@ const Navbar = () => {
                     <Button
                         isMUIIcon
                         className="h-6 w-6"
-                        onClick={() => setIsOpenMenu(true)}
+                        onClick={() => setIsOpenMenu(!isOpenMenu)}
                         buttonClassName=""
                         buttonType="button"
                     >
