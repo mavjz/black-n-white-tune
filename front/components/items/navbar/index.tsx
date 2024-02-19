@@ -101,7 +101,9 @@ const Navbar = () => {
                         isLink
                         link="/"
                     />
-                    {!isWide && <p className="text-white text-xl">Black'n'White Tune</p>}
+                    {!isWide && (
+                        <p className="text-white text-3xl font-gruppo">Black'n'White Tune</p>
+                    )}
                 </div>
                 <div className="flex gap-x-4 justify-center items-center md:gap-x-6">
                     {!isWide &&
