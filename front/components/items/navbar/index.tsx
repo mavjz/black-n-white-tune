@@ -88,7 +88,7 @@ const Navbar = () => {
                     </motion.div>
                 ))}
             </motion.div>
-            <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between px-5">
+            <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between items-center px-5">
                 <Button
                     isImage
                     className="h-9 w-20"
