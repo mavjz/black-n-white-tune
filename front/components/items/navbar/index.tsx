@@ -92,15 +92,17 @@ const Navbar = () => {
                 ))}
             </motion.div>
             <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between items-center px-5">
-                <Button
-                    isImage
-                    className="h-9 w-20"
-                    alt="Black'n'White Tune"
-                    image="/media/logo-picture.png"
-                    isLink
-                    link="/"
-                />
-
+                <div className="flex items-center gap-x-4">
+                    <Button
+                        isImage
+                        className="h-9 w-20"
+                        alt="Black'n'White Tune"
+                        image={'/media/logo-picture.png'}
+                        isLink
+                        link="/"
+                    />
+                    {!isWide && <p className="text-white text-xl">Black'n'White Tune</p>}
+                </div>
                 <div className="flex gap-x-4 justify-center items-center md:gap-x-6">
                     {!isWide &&
                         TEMPpages.map((page, index) => (
