@@ -2,7 +2,7 @@ export type ButtonType = {
     isLink?: boolean;
     isImage?: boolean;
     isMUIIcon?: boolean;
-    className: string;
+    className?: string;
 } & (
     | {
           isLink: true;
@@ -14,9 +14,9 @@ export type ButtonType = {
     | {
           isLink?: false;
           link?: never;
-          onClick: () => {};
+          onClick: () => void;
           buttonType: 'button' | 'submit' | 'reset' | undefined;
-          buttonClassName: string;
+          buttonClassName?: string;
       }
 ) &
     (
@@ -27,6 +27,7 @@ export type ButtonType = {
               text?: never;
               isMUIIcon?: false;
               children?: never;
+              className: string;
           }
         | {
               isImage?: false;
