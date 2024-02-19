@@ -5,7 +5,7 @@ import { ImageFramedType } from './models';
 const ImageFramed = ({ src, alt, className }: ImageFramedType) => {
     return (
         <div className={`relative ` + className}>
-            <Image src={src} alt={alt} fill />
+            <Image src={src} alt={alt} fill sizes="auto" />
         </div>
     );
 };
