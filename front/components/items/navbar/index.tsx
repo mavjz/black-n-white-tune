@@ -70,10 +70,10 @@ const navbarMenuButtonVariants = {
 const Navbar = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
     const TEMPpages = ['Strona', 'Strona', 'Strona', 'Strona', 'Strona'];
-    const isWide = useMedia({ maxWidth: '768px' });
+    const isWide = useMedia({ minWidth: '1024px' });
 
     useEffect(() => {
-        if (!isWide) {
+        if (isWide) {
             setIsOpenMenu(false);
         }
     }, [isWide]);
@@ -107,12 +107,12 @@ const Navbar = () => {
                         isLink
                         link="/"
                     />
-                    {!isWide && (
+                    {isWide && (
                         <p className="text-white text-3xl font-gruppo">Black'n'White Tune</p>
                     )}
                 </div>
                 <div className="flex gap-x-4 justify-center items-center md:gap-x-6">
-                    {!isWide &&
+                    {isWide &&
                         TEMPpages.map((page, index) => (
                             <motion.div
                                 whileHover={{
@@ -141,7 +141,7 @@ const Navbar = () => {
                         <LocalMallOutlinedIcon htmlColor="white" fontSize="medium" />
                     </Button>
 
-                    {isWide && (
+                    {!isWide && (
                         <Button
                             isMUIIcon
                             className="h-6 w-6"
