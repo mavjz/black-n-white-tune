@@ -1,43 +1,10 @@
-import Footer from '@/components/items/footer';
-import Navbar from '@/components/items/navbar';
+import VideoWelcome from '@/components/items/video-welcome';
 import React from 'react';
 
 export default function Home() {
     return (
         <React.Fragment>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            <VideoWelcome />
         </React.Fragment>
     );
 }

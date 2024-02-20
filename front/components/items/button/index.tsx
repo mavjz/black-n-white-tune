@@ -35,9 +35,11 @@ const Button = ({
                         <ImageFramed src={image} className={className} alt={alt} />
                     </Link>
                 ) : (
-                    <Link href={link} className={className}>
-                        <p>{text}</p>
-                    </Link>
+                    <div className={className}>
+                        <Link href={link}>
+                            <p>{text}</p>
+                        </Link>
+                    </div>
                 )
             ) : isImage ? (
                 <button className={buttonClassName} onClick={onClick} type={buttonType}>

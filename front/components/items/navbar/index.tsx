@@ -82,7 +82,7 @@ const Navbar = ({ pages }: NavbarType) => {
     return (
         <React.Fragment>
             <motion.div
-                className="h-[calc(100%-2.75rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6"
+                className="h-[calc(100%-2.75rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6 z-10"
                 animate={isOpenMenu ? 'open' : 'closed'}
                 initial={false}
                 variants={navbarMenuVariants}
@@ -93,7 +93,7 @@ const Navbar = ({ pages }: NavbarType) => {
                     </motion.div>
                 ))}
             </motion.div>
-            <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between items-center px-5">
+            <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between items-center px-5 z-10">
                 <div className="flex items-center gap-x-4">
                     <Button
                         isImage
