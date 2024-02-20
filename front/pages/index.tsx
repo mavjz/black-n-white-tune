@@ -5,8 +5,6 @@ import React from 'react';
 export default function Home() {
     return (
         <React.Fragment>
-            <Navbar />
-            Black'n' white Tune
             <br />
             <br />
             <br />
@@ -40,7 +38,6 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <Footer />
         </React.Fragment>
     );
 }

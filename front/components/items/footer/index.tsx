@@ -5,12 +5,9 @@ import { FooterType } from './models';
 import { motion } from 'framer-motion';
 import { useMedia } from 'use-media';
 
-const Footer = ({ phoneNumber, mail, country }: FooterType) => {
+// Hardcoded props are temporary until add fetching data and backend part
+const Footer = ({ phoneNumber, mail, country, pages }: FooterType) => {
     const isWide = useMedia({ minWidth: '768px' });
-    phoneNumber = '670 670 670';
-    mail = 'contact@blacknwhitetune.com';
-    country = 'Poland';
-    const TEMPpages = ['Strona', 'Strona', 'Strona', 'Strona', 'Strona'];
 
     return (
         <div className="w-full bg-white pt-10 pb-28 md:pb-10 flex flex-row justify-evenly">
@@ -29,7 +26,7 @@ const Footer = ({ phoneNumber, mail, country }: FooterType) => {
                 <React.Fragment>
                     <div className="flex flex-col items-center gap-y-6">
                         <Button isLink link="/" text="Kategoria 1" className="font-bold" />
-                        {TEMPpages.map((page, index) => (
+                        {pages.map((page, index) => (
                             <motion.div
                                 whileHover={{
                                     fontSize: '17px',
@@ -46,7 +43,7 @@ const Footer = ({ phoneNumber, mail, country }: FooterType) => {
                     </div>
                     <div className="flex flex-col items-center gap-y-6">
                         <Button isLink link="/" text="Kategoria 2" className="font-bold" />
-                        {TEMPpages.map((page, index) => (
+                        {pages.map((page, index) => (
                             <motion.div
                                 whileHover={{
                                     fontSize: '17px',
@@ -57,13 +54,13 @@ const Footer = ({ phoneNumber, mail, country }: FooterType) => {
                                 whileTap={{ scale: 0.9 }}
                                 key={index}
                             >
-                                <Button isLink link="/" text={page + ' ' + `${index + 1}`} />
+                                <Button isLink link="/" text={page} />
                             </motion.div>
                         ))}
                     </div>
                     <div className="flex flex-col items-center gap-y-6">
                         <Button isLink link="/" text="Kategoria 3" className="font-bold" />
-                        {TEMPpages.map((page, index) => (
+                        {pages.map((page, index) => (
                             <motion.div
                                 whileHover={{
                                     fontSize: '17px',
@@ -74,7 +71,7 @@ const Footer = ({ phoneNumber, mail, country }: FooterType) => {
                                 whileTap={{ scale: 0.9 }}
                                 key={index}
                             >
-                                <Button isLink link="/" text={page + ' ' + `${index + 1}`} />
+                                <Button isLink link="/" text={page} />
                             </motion.div>
                         ))}
                     </div>

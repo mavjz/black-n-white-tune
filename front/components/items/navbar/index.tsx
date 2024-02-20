@@ -6,6 +6,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { motion } from 'framer-motion';
 import { useMedia } from 'use-media';
+import { NavbarType } from './models';
 
 const navbarMenuVariants = {
     open: {
@@ -67,9 +68,9 @@ const navbarMenuButtonVariants = {
     },
 };
 
-const Navbar = () => {
+// Hardcoded props are temporary until add fetching data and backend part
+const Navbar = ({ pages }: NavbarType) => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
-    const TEMPpages = ['Strona', 'Strona', 'Strona', 'Strona', 'Strona'];
     const isWide = useMedia({ minWidth: '1024px' });
 
     useEffect(() => {
@@ -86,14 +87,9 @@ const Navbar = () => {
                 initial={false}
                 variants={navbarMenuVariants}
             >
-                {TEMPpages.map((page, index) => (
+                {pages.map((page, index) => (
                     <motion.div variants={navbarMenusElementsVariants} key={index}>
-                        <Button
-                            isLink
-                            link="/"
-                            text={page + ' ' + `${index + 1}`}
-                            className="text-white text-xl"
-                        />
+                        <Button isLink link="/" text={page} className="text-white text-xl" />
                     </motion.div>
                 ))}
             </motion.div>
@@ -113,7 +109,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex gap-x-4 justify-center items-center md:gap-x-6">
                     {isWide &&
-                        TEMPpages.map((page, index) => (
+                        pages.map((page, index) => (
                             <motion.div
                                 whileHover={{
                                     fontSize: '17px',
@@ -124,12 +120,7 @@ const Navbar = () => {
                                 whileTap={{ scale: 0.9 }}
                                 key={index}
                             >
-                                <Button
-                                    isLink
-                                    link="/"
-                                    text={page + ' ' + `${index + 1}`}
-                                    className="text-white text-l"
-                                />
+                                <Button isLink link="/" text={page} className="text-white text-l" />
                             </motion.div>
                         ))}
 
