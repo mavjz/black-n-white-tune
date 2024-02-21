@@ -13,7 +13,7 @@ const ProductCard = () => {
                 alt="Grand Piano"
                 isLink
                 link="/"
-                className="h-72 w-72 object-cover rounded-ful"
+                className="h-72 w-72 object-cover rounded-full"
             />
         </div>
     );
