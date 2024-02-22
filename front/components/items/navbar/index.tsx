@@ -81,18 +81,21 @@ const Navbar = ({ pages }: NavbarType) => {
 
     return (
         <React.Fragment>
-            <motion.div
-                className="h-[calc(100%-2.75rem)] w-full absolute bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6 z-10"
-                animate={isOpenMenu ? 'open' : 'closed'}
-                initial={false}
-                variants={navbarMenuVariants}
-            >
-                {pages.map((page, index) => (
-                    <motion.div variants={navbarMenusElementsVariants} key={index}>
-                        <Button isLink link="/" text={page} className="text-white text-xl" />
-                    </motion.div>
-                ))}
-            </motion.div>
+            <div className="sticky top-0 z-10">
+                <motion.div
+                    className="h-screen w-screen absolute top-0 bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6 z-10"
+                    animate={isOpenMenu ? 'open' : 'closed'}
+                    initial={false}
+                    variants={navbarMenuVariants}
+                >
+                    {pages.map((page, index) => (
+                        <motion.div variants={navbarMenusElementsVariants} key={index}>
+                            <Button isLink link="/" text={page} className="text-white text-xl" />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
+
             <div className="w-full h-12 bg-slate-950 sticky top-0 flex justify-between items-center px-5 z-10">
                 <div className="flex items-center gap-x-4">
                     <Button
