@@ -8,7 +8,7 @@ const ProductCardHolder = ({ title, products }: ProductCardHolderType) => {
             <h1 className="text-4xl mx-5 my-4 font-gruppo font-black border-b-2 border-red-950/[0.8] pb-1">
                 {title}
             </h1>
-            <div className="md:mx-5 my-8 h-fit flex flex-col md:flex-row justify-between">
+            <div className="md:mx-5 my-8 h-fit flex flex-col md:flex-row justify-between gap-y-5">
                 {products.map((card, index) => (
                     <ProductCard name={card.name} link={card.link} image={card.image} key={index} />
                 ))}
