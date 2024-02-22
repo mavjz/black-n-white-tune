@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../button';
 import { motion } from 'framer-motion';
+import { ProductCardType } from './models';
 
 const hoverVariant = {
     open: {
@@ -17,7 +18,7 @@ const hoverVariant = {
     },
 };
 
-const ProductCard = () => {
+const ProductCard = ({ image, link, name }: ProductCardType) => {
     const [isHovering, setIsHovered] = useState(false);
     const onMouseEnter = () => setIsHovered(true);
     const onMouseLeave = () => setIsHovered(false);
@@ -32,10 +33,10 @@ const ProductCard = () => {
             >
                 <Button
                     isImage
-                    image="/media/piano-photos/grand-piano.jpeg"
-                    alt="Grand Piano"
+                    image={image}
+                    alt={name}
                     isLink
-                    link="/"
+                    link={link}
                     className="h-96 md:h-72 w-full md:w-72 object-cover"
                 />
             </motion.div>
@@ -46,8 +47,8 @@ const ProductCard = () => {
             >
                 <Button
                     isLink
-                    link="/"
-                    text="Grand Pianos"
+                    link={link}
+                    text={name}
                     className="text-white font-medium text-center text-4xl md:text-2xl tracking-wide mt-60 md:mt-28"
                 />
             </div>

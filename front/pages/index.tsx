@@ -9,7 +9,6 @@ export default function Home() {
             <h1 className="text-4xl mx-5 my-4 font-gruppo font-black border-b-2 border-red-950/[0.8] pb-1">
                 Products
             </h1>
-            <ProductCard />
         </React.Fragment>
     );
 }
