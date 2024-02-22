@@ -33,7 +33,17 @@ export default function Home() {
                 ]}
                 title="Products"
             />
-            <ProductArticle />
+            <ProductArticle
+                image="/media/piano-photos/gpiano-on-stage.jpeg"
+                pretitle="Only in our store"
+                title="Pleyel grand piano F190"
+                description="Experience timeless elegance and impeccable craftsmanship with the Grand Piano
+                    F190 in glossy black by Pleyel. This exquisite instrument delivers unparalleled
+                    sound quality and responsiveness, making it the perfect choice for both
+                    professional musicians and discerning enthusiasts. Elevate your musical journey
+                    with the renowned heritage and superior performance of Pleyel's F190 Grand
+                    Piano."
+            />
         </React.Fragment>
     );
 }
