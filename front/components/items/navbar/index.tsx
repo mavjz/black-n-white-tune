@@ -83,7 +83,7 @@ const Navbar = ({ pages }: NavbarType) => {
         <React.Fragment>
             <div className="sticky top-0 z-10">
                 <motion.div
-                    className="h-screen md:h-full  w-screen md:w-full absolute top-0 bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6 z-10"
+                    className="h-screen md:h-full w-screen md:w-full absolute top-0 bg-slate-950 flex flex-col px-5 my-11 py-10 gap-y-6 z-10"
                     animate={isOpenMenu ? 'open' : 'closed'}
                     initial={false}
                     variants={navbarMenuVariants}
