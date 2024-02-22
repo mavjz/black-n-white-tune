@@ -52,11 +52,11 @@ export default function Home() {
                 image="/media/piano-photos/gpiano-in-saloon.jpeg"
                 pretitle="Did you know?"
                 title="Steinway B-211"
-                description="Indulge in the legendary sound and craftsmanship of the Steinway B-211 Grand 
-                    Piano. Renowned for its rich tone and exceptional playability, this exquisite 
-                    instrument is a testament to Steinway's uncompromising standards. Whether you're a 
-                    seasoned performer or an aspiring pianist, the Steinway B-211 promises an unparalleled 
-                    musical experience that will inspire and delight for generations to come."
+                description="Embark on a journey of unparalleled musical excellence with the Steinway B-211 
+                    Grand Piano. Celebrated for its lush tones and flawless playability, the Steinway B-211 
+                    stands as a timeless testament to the unwavering standards of Steinway. From the 
+                    delicate touch of seasoned virtuosos to the eager fingertips of budding musicians, each 
+                    note resonates with the legacy of Steinway's uncompromising dedication to perfection."
             />
         </React.Fragment>
     );
