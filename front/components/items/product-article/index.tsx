@@ -12,7 +12,7 @@ const ProductArticle = ({
 }: ProductArticleType) => {
     return (
         <div
-            className={`flex ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col  mt-16`}
+            className={`flex ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col mt-12`}
         >
             <ImageFramed className="w-full md:w-1/2 h-96 object-cover" src={image} alt={title} />
             <div className="w-full md:w-1/2 h-96 px-5 md:px-32 flex flex-col items-center md:items-start">

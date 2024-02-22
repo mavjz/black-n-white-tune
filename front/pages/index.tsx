@@ -31,8 +31,11 @@ export default function Home() {
                         image: '/media/piano-photos/chair.jpeg',
                     },
                 ]}
-                title="Products"
+                title="Products categories"
             />
+            <h1 className="text-4xl mx-5 my-4 font-gruppo font-black border-b-2 border-red-950/[0.8] pb-1">
+                Explore our collection
+            </h1>
             <ProductArticle
                 image="/media/piano-photos/gpiano-on-stage.jpeg"
                 pretitle="Only in our store"
@@ -43,6 +46,17 @@ export default function Home() {
                     professional musicians and discerning enthusiasts. Elevate your musical journey
                     with the renowned heritage and superior performance of Pleyel's F190 Grand
                     Piano."
+            />
+            <ProductArticle
+                imageRight
+                image="/media/piano-photos/gpiano-in-saloon.jpeg"
+                pretitle="Did you know?"
+                title="Steinway B-211"
+                description="Indulge in the legendary sound and craftsmanship of the Steinway B-211 Grand 
+                    Piano. Renowned for its rich tone and exceptional playability, this exquisite 
+                    instrument is a testament to Steinway's uncompromising standards. Whether you're a 
+                    seasoned performer or an aspiring pianist, the Steinway B-211 promises an unparalleled 
+                    musical experience that will inspire and delight for generations to come."
             />
         </React.Fragment>
     );
