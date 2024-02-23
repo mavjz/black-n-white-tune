@@ -1,4 +1,5 @@
 import ProductCardHolder from '@/components/container/product-card-holder';
+import Newsletter from '@/components/items/newsletter';
 import ProductArticle from '@/components/items/product-article';
 import ProductCard from '@/components/items/product-card';
 import VideoWelcome from '@/components/items/video-welcome';
@@ -58,6 +59,7 @@ export default function Home() {
                     delicate touch of seasoned virtuosos to the eager fingertips of budding musicians, each 
                     note resonates with the legacy of Steinway's uncompromising dedication to perfection."
             />
+            <Newsletter />
         </React.Fragment>
     );
 }
