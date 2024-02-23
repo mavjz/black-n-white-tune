@@ -1,4 +1,6 @@
+import { Field, Form, Formik } from 'formik';
 import React from 'react';
+import Button from '../button';
 
 const Newsletter = () => {
     return (
@@ -10,9 +12,24 @@ const Newsletter = () => {
                 <p className="text-white text-lg text-center">Subscribe to Our Newsletter</p>
             </div>
             <div className="w-3/5">
-                I have read and understood the information regarding the use of my personal data as
-                outlined in the Privacy Policy, and I consent to receiving personalized marketing
-                communications from Black'n'White Tune via email and other means.
+                <Formik>
+                    <Form>
+                        <div>
+                            <label></label>
+                            <Field type="email" />
+                        </div>
+                        <div>
+                            <Field type="checkbox" />
+                            <label className="text-white">
+                                I have read and understood the information regarding the use of my
+                                personal data as outlined in the Privacy Policy, and I consent to
+                                receiving personalized marketing communications from Black'n'White
+                                Tune via email and other means.
+                            </label>
+                        </div>
+                        <Button text="Submit" buttonType="submit" />
+                    </Form>
+                </Formik>
             </div>
         </div>
     );
