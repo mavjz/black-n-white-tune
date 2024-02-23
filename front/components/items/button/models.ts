@@ -15,6 +15,13 @@ export type ButtonType = {
           isLink?: false;
           link?: never;
           onClick: () => void;
+          buttonType?: never;
+          buttonClassName?: string;
+      }
+    | {
+          isLink?: false;
+          link?: never;
+          onClick?: never;
           buttonType: 'button' | 'submit' | 'reset' | undefined;
           buttonClassName?: string;
       }
