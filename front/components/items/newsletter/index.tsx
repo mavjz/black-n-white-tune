@@ -11,11 +11,12 @@ const Newsletter = () => {
                 </h1>
                 <p className="text-white text-lg text-center">Subscribe to Our Newsletter</p>
             </div>
-            <div className="w-full md:w-3/5 flex flex-col justify-center md:pr-36">
+            <div className="w-full md:w-3/5 flex flex-col justify-center lg:pr-32 md:pr-5">
                 <Formik
                     initialValues={{ email: '', approval: '' }}
-                    onSubmit={(values) => {
+                    onSubmit={(values, { resetForm }) => {
                         console.log(values);
+                        resetForm();
                     }}
                 >
                     <Form className="flex flex-col gap-y-4">
@@ -46,7 +47,7 @@ const Newsletter = () => {
                         <Button
                             text="Submit"
                             buttonType="submit"
-                            className="h-10 w-full md:w-52 rounded-full bg-red-950 lg:text-xl text-white text-center flex items-center justify-center"
+                            className="h-10 w-full lg:w-52 rounded-full bg-red-950 lg:text-xl text-white text-center flex items-center justify-center"
                         />
                     </Form>
                 </Formik>
