@@ -16,6 +16,7 @@ const Button = ({
     buttonClassName,
     onClick,
     buttonType,
+    disabled,
 }: ButtonType) => {
     return (
         <React.Fragment>
@@ -42,11 +43,21 @@ const Button = ({
                     </div>
                 )
             ) : isImage ? (
-                <button className={buttonClassName} onClick={onClick} type={buttonType}>
+                <button
+                    className={buttonClassName}
+                    onClick={onClick}
+                    type={buttonType}
+                    disabled={disabled}
+                >
                     <ImageFramed className={className} src={image} alt={alt} />
                 </button>
             ) : (
-                <button className={buttonClassName} onClick={onClick} type={buttonType}>
+                <button
+                    className={buttonClassName}
+                    onClick={onClick}
+                    type={buttonType}
+                    disabled={disabled}
+                >
                     <p className={className}>{text}</p>
                 </button>
             )}
