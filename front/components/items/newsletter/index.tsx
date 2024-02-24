@@ -1,8 +1,13 @@
-import { Field, Form, Formik, FormikHelpers } from 'formik';
+import { ErrorMessage, Field, Form, Formik, FormikHelpers } from 'formik';
 import React from 'react';
 import Button from '../button';
+import { boolean, object, string } from 'yup';
 
 const Newsletter = () => {
+    const validationSchema = object({
+        email: string().required(),
+        approval: boolean().oneOf([true]).required(),
+    });
     return (
         <div className="bg-slate-950 w-full h-full md:h-72 flex flex-col py-10 px-5 md:px-0 md:flex-row gap-y-2">
             <div className="w-full md:w-2/5 h-full flex flex-col justify-center gap-y-8 md:mx-10">
@@ -18,6 +23,7 @@ const Newsletter = () => {
                         console.log(values);
                         resetForm();
                     }}
+                    validationSchema={validationSchema}
                 >
                     <Form className="flex flex-col gap-y-4">
                         <div>

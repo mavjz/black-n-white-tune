@@ -22,7 +22,8 @@
     "react": "^18",
     "react-dom": "^18",
     "tailwind": "^4.0.0",
-    "use-media": "^1.5.0"
+    "use-media": "^1.5.0",
+    "yup": "^1.3.3"
   },
   "devDependencies": {
     "@types/node": "^20",
