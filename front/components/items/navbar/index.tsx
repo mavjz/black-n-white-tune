@@ -140,8 +140,6 @@ const Navbar = ({ pages }: NavbarType) => {
                             isMUIIcon
                             className="h-6 w-6"
                             onClick={() => setIsOpenMenu(!isOpenMenu)}
-                            buttonClassName=""
-                            buttonType="button"
                         >
                             <motion.div
                                 animate={isOpenMenu ? 'open' : 'closed'}
