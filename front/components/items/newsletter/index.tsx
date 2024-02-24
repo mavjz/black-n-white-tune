@@ -25,37 +25,41 @@ const Newsletter = () => {
                     }}
                     validationSchema={validationSchema}
                 >
-                    <Form className="flex flex-col gap-y-4">
-                        <div>
-                            <Field
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder="Your adress email"
-                                className="w-full h-12 font-nunito px-4 border-2 border-slate-50 bg-slate-950
+                    {({ isValid, dirty }) => (
+                        <Form className="flex flex-col gap-y-4">
+                            <div>
+                                <Field
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="Your adress email"
+                                    className="w-full h-12 font-nunito px-4 border-2 border-slate-50 bg-slate-950
                                     text-white outline-none tracking-widest font-light placeholder:text-white"
+                                />
+                            </div>
+                            <div className="grid grid-flow-col gap-x-3">
+                                <Field
+                                    id="approval"
+                                    name="approval"
+                                    type="checkbox"
+                                    className="w-4 h-4 appearance-none checked:appearance-auto ring-2 ring-slate-50 accent-slate-950"
+                                />
+                                <label className="text-white text-sm">
+                                    I have read and understood the information regarding the use of
+                                    my personal data as outlined in the Privacy Policy, and I
+                                    consent to receiving personalized marketing communications from
+                                    Black'n'White Tune via email and other means.
+                                </label>
+                            </div>
+                            <Button
+                                text="Submit"
+                                buttonType="submit"
+                                disabled={!isValid || !dirty}
+                                className="h-10 w-full lg:w-52 rounded-full bg-red-950 lg:text-xl text-white text-center flex items-center justify-center"
+                                buttonClassName="disabled:opacity-75"
                             />
-                        </div>
-                        <div className="grid grid-flow-col gap-x-3">
-                            <Field
-                                id="approval"
-                                name="approval"
-                                type="checkbox"
-                                className="w-4 h-4 appearance-none checked:appearance-auto ring-2 ring-slate-50 accent-slate-950"
-                            />
-                            <label className="text-white text-sm">
-                                I have read and understood the information regarding the use of my
-                                personal data as outlined in the Privacy Policy, and I consent to
-                                receiving personalized marketing communications from Black'n'White
-                                Tune via email and other means.
-                            </label>
-                        </div>
-                        <Button
-                            text="Submit"
-                            buttonType="submit"
-                            className="h-10 w-full lg:w-52 rounded-full bg-red-950 lg:text-xl text-white text-center flex items-center justify-center"
-                        />
-                    </Form>
+                        </Form>
+                    )}
                 </Formik>
             </div>
         </div>
