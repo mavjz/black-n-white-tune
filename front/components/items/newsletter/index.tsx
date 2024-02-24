@@ -4,14 +4,14 @@ import Button from '../button';
 
 const Newsletter = () => {
     return (
-        <div className="bg-slate-950 w-full h-72 flex flex-col md:flex-row">
-            <div className="w-2/5 h-full flex flex-col justify-center gap-y-8 mx-10">
+        <div className="bg-slate-950 w-full h-full md:h-72 flex flex-col py-10 px-5 md:px-0 md:flex-row gap-y-2">
+            <div className="w-full md:w-2/5 h-full flex flex-col justify-center gap-y-8 md:mx-10">
                 <h1 className="text-white text-2xl text-center uppercase font-gruppo font-black">
                     Stay Up-to-Date with Special Offers and join Our Musical Community
                 </h1>
                 <p className="text-white text-lg text-center">Subscribe to Our Newsletter</p>
             </div>
-            <div className="w-3/5 flex flex-col justify-center pr-36">
+            <div className="w-full md:w-3/5 flex flex-col justify-center md:pr-36">
                 <Formik
                     initialValues={{ email: '', approval: '' }}
                     onSubmit={(values) => {
@@ -25,7 +25,7 @@ const Newsletter = () => {
                                 name="email"
                                 type="email"
                                 placeholder="Your adress email"
-                                className="w-full h-12 font-nunito pl-4 border-2 border-slate-50 bg-slate-950
+                                className="w-full h-12 font-nunito px-4 border-2 border-slate-50 bg-slate-950
                                     text-white outline-none tracking-widest font-light placeholder:text-white"
                             />
                         </div>
@@ -46,7 +46,7 @@ const Newsletter = () => {
                         <Button
                             text="Submit"
                             buttonType="submit"
-                            className="h-10 w-52 rounded-full bg-red-950 lg:text-xl text-white flex items-center justify-center"
+                            className="h-10 w-full md:w-52 rounded-full bg-red-950 lg:text-xl text-white text-center flex items-center justify-center"
                         />
                     </Form>
                 </Formik>
