@@ -1,4 +1,5 @@
 import ProductCardHolder from '@/components/container/product-card-holder';
+import Carousel from '@/components/items/carousel';
 import Newsletter from '@/components/items/newsletter';
 import ProductArticle from '@/components/items/product-article';
 import ProductCard from '@/components/items/product-card';
@@ -58,6 +59,16 @@ export default function Home() {
                     stands as a timeless testament to the unwavering standards of Steinway. From the 
                     delicate touch of seasoned virtuosos to the eager fingertips of budding musicians, each 
                     note resonates with the legacy of Steinway's uncompromising dedication to perfection."
+            />
+            <Carousel
+                logos={[
+                    { src: '/media/piano-photos/gpiano-in-saloon.jpeg', alt: '' },
+                    { src: '/media/piano-photos/gpiano-on-stage.jpeg', alt: '' },
+                    { src: '/media/piano-photos/gpiano-in-saloon.jpeg', alt: '' },
+                    { src: '/media/piano-photos/gpiano-on-stage.jpeg', alt: '' },
+                    { src: '/media/piano-photos/gpiano-in-saloon.jpeg', alt: '' },
+                    { src: '/media/piano-photos/gpiano-on-stage.jpeg', alt: '' },
+                ]}
             />
             <Newsletter />
         </React.Fragment>

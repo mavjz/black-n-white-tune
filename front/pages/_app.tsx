@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import React from 'react';
 import '../public/styles/globals.css';
+import 'swiper/css';
 import { AnimatePresence } from 'framer-motion';
 import Layout from '@/components/container/layout';
 
