@@ -6,7 +6,7 @@ import { ProductCategoryType } from './models';
 const ProductCategory = ({ model, brand, price, image, link }: ProductCategoryType) => {
     return (
         <div>
-            <div className="w-full md:w-1/2 lg:w-1/3 h-4/5 relative overflow-hidden">
+            <div className="w-1/2 md:w-1/2 lg:w-1/3 h-52 md:h-[29rem] relative overflow-hidden">
                 <motion.div
                     whileHover={{
                         scale: 1.2,
@@ -21,16 +21,16 @@ const ProductCategory = ({ model, brand, price, image, link }: ProductCategoryTy
                         alt={model + ' ' + brand}
                         isLink
                         link={link}
-                        className="w-full h-[29rem] object-fill"
+                        className="w-full h-52 md:h-[29rem] object-fill"
                     />
                 </motion.div>
             </div>
-            <div className="px-5 my-4 md:my-2">
-                <h3 className="text-4xl font-gruppo font-black hover:underline decoration-2">
+            <div className="px-5 my-2">
+                <h3 className="text-2xl md:text-4xl font-gruppo font-black hover:underline decoration-2">
                     {model}
                 </h3>
-                <p className="">{brand}</p>
-                <h5 className="mt-3">{price}</h5>
+                <p className="text-sm md:text-base">{brand}</p>
+                <h5 className="text-sm md:text-base mt-3">{price}</h5>
             </div>
         </div>
     );
