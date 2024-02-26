@@ -4,7 +4,7 @@ import { ProductCategoryHolderType } from './models';
 
 const ProductCategoryHolder = ({ products }: ProductCategoryHolderType) => {
     return (
-        <div className="my-8 h-fit flex flex-col flex-wrap md:flex-row items-stretch">
+        <div className="my-8 h-fit flex flex-row flex-wrap items-stretch gap-y-5">
             {products.map((card, index) => (
                 <ProductCategory
                     brand={card.brand}
