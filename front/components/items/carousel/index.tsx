@@ -11,7 +11,7 @@ const Carousel = ({ logos }: CarouselType) => {
     return (
         <Swiper
             modules={[Autoplay]}
-            spaceBetween={5}
+            spaceBetween={30}
             slidesPerView={isWide ? 1 : 4}
             loop
             speed={4000}
@@ -24,7 +24,7 @@ const Carousel = ({ logos }: CarouselType) => {
                         key={index}
                         alt={logo.alt}
                         src={logo.src}
-                        className="w-full h-52 object-fill"
+                        className="w-full h-52 object-contain"
                     />
                 </SwiperSlide>
             ))}

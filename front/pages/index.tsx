@@ -62,12 +62,15 @@ export default function Home() {
             />
             <Carousel
                 logos={[
-                    { src: '/media/piano-photos/gpiano-in-saloon.jpeg', alt: '' },
-                    { src: '/media/piano-photos/gpiano-on-stage.jpeg', alt: '' },
-                    { src: '/media/piano-photos/gpiano-in-saloon.jpeg', alt: '' },
-                    { src: '/media/piano-photos/gpiano-on-stage.jpeg', alt: '' },
-                    { src: '/media/piano-photos/gpiano-in-saloon.jpeg', alt: '' },
-                    { src: '/media/piano-photos/gpiano-on-stage.jpeg', alt: '' },
+                    { src: '/media/piano-logos/bechstein.png', alt: 'Bechstein' },
+                    { src: '/media/piano-logos/bluthner.png', alt: 'Bluthner' },
+                    { src: '/media/piano-logos/bosendorfer.png', alt: 'Bosendorfer' },
+                    { src: '/media/piano-logos/erard.png', alt: 'Erard' },
+                    { src: '/media/piano-logos/fazioli.png', alt: 'Fazioli' },
+                    { src: '/media/piano-logos/pleyel.svg', alt: 'Pleyel' },
+                    { src: '/media/piano-logos/shigeru.png', alt: 'Shigeru Kawai' },
+                    { src: '/media/piano-logos/steinway.png', alt: 'Steinway' },
+                    { src: '/media/piano-logos/yamaha.png', alt: 'Yamaha' },
                 ]}
             />
             <Newsletter />
