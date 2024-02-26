@@ -5,8 +5,8 @@ import { ProductCategoryType } from './models';
 
 const ProductCategory = ({ model, brand, price, image, link }: ProductCategoryType) => {
     return (
-        <div>
-            <div className="w-1/2 md:w-1/2 lg:w-1/3 h-52 md:h-[29rem] relative overflow-hidden">
+        <div className="w-1/2 md:w-1/2 lg:w-1/3 h-fit">
+            <div className="w-full h-52 md:h-[29rem] relative overflow-hidden">
                 <motion.div
                     whileHover={{
                         scale: 1.2,

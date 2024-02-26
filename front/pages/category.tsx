@@ -1,3 +1,4 @@
+import ProductCategoryHolder from '@/components/container/product-category-holder';
 import ProductCategory from '@/components/items/product-category';
 import React from 'react';
 
@@ -14,6 +15,157 @@ const Category = ({ category }) => {
                 price="5600 zł"
                 link="/"
                 image="/media/piano-photos/grand-piano.jpeg"
+            />
+            <ProductCategoryHolder
+                products={[
+                    {
+                        model: 'A-188',
+                        brand: 'Steinway and sons',
+                        price: '5600 zł',
+                        link: '/',
+                        image: '/media/piano-photos/grand-piano.jpeg',
+                    },
+                    {
+                        model: 'B-164',
+                        brand: 'Yamaha',
+                        price: '9300 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'F-330',
+                        brand: 'Shigeru Kawai',
+                        price: '98 000 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'A-188',
+                        brand: 'Steinway and sons',
+                        price: '5600 zł',
+                        link: '/',
+                        image: '/media/piano-photos/grand-piano.jpeg',
+                    },
+                    {
+                        model: 'B-164',
+                        brand: 'Yamaha',
+                        price: '9300 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'F-330',
+                        brand: 'Shigeru Kawai',
+                        price: '98 000 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'A-188',
+                        brand: 'Steinway and sons',
+                        price: '5600 zł',
+                        link: '/',
+                        image: '/media/piano-photos/grand-piano.jpeg',
+                    },
+                    {
+                        model: 'B-164',
+                        brand: 'Yamaha',
+                        price: '9300 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'F-330',
+                        brand: 'Shigeru Kawai',
+                        price: '98 000 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'A-188',
+                        brand: 'Steinway and sons',
+                        price: '5600 zł',
+                        link: '/',
+                        image: '/media/piano-photos/grand-piano.jpeg',
+                    },
+                    {
+                        model: 'B-164',
+                        brand: 'Yamaha',
+                        price: '9300 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'F-330',
+                        brand: 'Shigeru Kawai',
+                        price: '98 000 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'A-188',
+                        brand: 'Steinway and sons',
+                        price: '5600 zł',
+                        link: '/',
+                        image: '/media/piano-photos/grand-piano.jpeg',
+                    },
+                    {
+                        model: 'B-164',
+                        brand: 'Yamaha',
+                        price: '9300 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'F-330',
+                        brand: 'Shigeru Kawai',
+                        price: '98 000 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'A-188',
+                        brand: 'Steinway and sons',
+                        price: '5600 zł',
+                        link: '/',
+                        image: '/media/piano-photos/grand-piano.jpeg',
+                    },
+                    {
+                        model: 'B-164',
+                        brand: 'Yamaha',
+                        price: '9300 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'F-330',
+                        brand: 'Shigeru Kawai',
+                        price: '98 000 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'A-188',
+                        brand: 'Steinway and sons',
+                        price: '5600 zł',
+                        link: '/',
+                        image: '/media/piano-photos/grand-piano.jpeg',
+                    },
+                    {
+                        model: 'B-164',
+                        brand: 'Yamaha',
+                        price: '9300 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                    {
+                        model: 'F-330',
+                        brand: 'Shigeru Kawai',
+                        price: '98 000 zł',
+                        link: '/',
+                        image: '/media/piano-photos/upright-piano.jpeg',
+                    },
+                ]}
             />
         </div>
     );
