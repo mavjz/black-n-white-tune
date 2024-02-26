@@ -38,6 +38,19 @@ export default function Home() {
             <h1 className="text-4xl mx-5 my-4 font-gruppo font-black border-b-2 border-red-950/[0.8] pb-1">
                 Explore our collection
             </h1>
+            <Carousel
+                logos={[
+                    { src: '/media/piano-logos/bechstein.png', alt: 'Bechstein' },
+                    { src: '/media/piano-logos/bluthner.png', alt: 'Bluthner' },
+                    { src: '/media/piano-logos/bosendorfer.png', alt: 'Bosendorfer' },
+                    { src: '/media/piano-logos/erard.png', alt: 'Erard' },
+                    { src: '/media/piano-logos/fazioli.png', alt: 'Fazioli' },
+                    { src: '/media/piano-logos/pleyel.svg', alt: 'Pleyel' },
+                    { src: '/media/piano-logos/shigeru.png', alt: 'Shigeru Kawai' },
+                    { src: '/media/piano-logos/steinway.png', alt: 'Steinway' },
+                    { src: '/media/piano-logos/yamaha.png', alt: 'Yamaha' },
+                ]}
+            />
             <ProductArticle
                 image="/media/piano-photos/gpiano-on-stage.jpeg"
                 pretitle="Only in our store"
@@ -59,19 +72,6 @@ export default function Home() {
                     stands as a timeless testament to the unwavering standards of Steinway. From the 
                     delicate touch of seasoned virtuosos to the eager fingertips of budding musicians, each 
                     note resonates with the legacy of Steinway's uncompromising dedication to perfection."
-            />
-            <Carousel
-                logos={[
-                    { src: '/media/piano-logos/bechstein.png', alt: 'Bechstein' },
-                    { src: '/media/piano-logos/bluthner.png', alt: 'Bluthner' },
-                    { src: '/media/piano-logos/bosendorfer.png', alt: 'Bosendorfer' },
-                    { src: '/media/piano-logos/erard.png', alt: 'Erard' },
-                    { src: '/media/piano-logos/fazioli.png', alt: 'Fazioli' },
-                    { src: '/media/piano-logos/pleyel.svg', alt: 'Pleyel' },
-                    { src: '/media/piano-logos/shigeru.png', alt: 'Shigeru Kawai' },
-                    { src: '/media/piano-logos/steinway.png', alt: 'Steinway' },
-                    { src: '/media/piano-logos/yamaha.png', alt: 'Yamaha' },
-                ]}
             />
             <Newsletter />
         </React.Fragment>
