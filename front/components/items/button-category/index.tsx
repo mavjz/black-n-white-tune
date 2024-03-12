@@ -30,10 +30,10 @@ const ButtonCategory = () => {
         'Yamaha',
     ];
 
-    const categoryMenuVariants = {
+    const categoryMenuBgVariants = {
         open: {
             opacity: 1,
-            x: 0,
+            zIndex: 20,
             transition: {
                 bounce: 0,
                 duration: 1,
@@ -41,7 +41,27 @@ const ButtonCategory = () => {
         },
         closed: {
             opacity: 0,
-            x: '-100%',
+            zIndex: '-10',
+            transition: {
+                bounce: 0,
+                duration: 0.5,
+                zIndex: {
+                    delay: 0.5,
+                },
+            },
+        },
+    };
+
+    const categoryMenuVariants = {
+        open: {
+            x: 0,
+            transition: {
+                bounce: 0,
+                duration: 1,
+            },
+        },
+        closed: {
+            x: '100%',
             transition: {
                 bounce: 0,
                 duration: 0.5,
@@ -49,7 +69,44 @@ const ButtonCategory = () => {
         },
     };
 
+    const categoryButtonVariants = {
+        open: {
+            rotate: 180,
+            transition: {
+                bounce: 0,
+                duration: 0.3,
+            },
+        },
+        closed: {
+            rotate: 0,
+            transition: {
+                bounce: 0,
+                duration: 0.3,
+            },
+        },
+    };
+
+    // const categoryOptionsVariants = {
+    //     open: {
+    //         display: 'flex',
+    //         y: 0,
+    //         transition: {
+    //             bounce: 0,
+    //             duration: 1,
+    //         },
+    //     },
+    //     closed: {
+    //         display: 'none',
+    //         y: '-100%',
+    //         transition: {
+    //             bounce: 0,
+    //             duration: 0.5,
+    //         },
+    //     },
+    // };
+
     useEffect(() => {
+        document.body.classList.add('overflow-x-hidden');
         if (isOpen) {
             document.body.classList.add('overflow-y-hidden');
         } else {
@@ -62,10 +119,15 @@ const ButtonCategory = () => {
             <motion.div
                 animate={isOpen ? 'open' : 'closed'}
                 initial={false}
-                variants={categoryMenuVariants}
+                variants={categoryMenuBgVariants}
                 className="absolute bg-slate-950/[0.5] w-full h-screen top-0"
             >
-                <div className="bg-slate-50 w-full lg:w-2/5 h-screen absolute right-0 px-8 pt-5">
+                <motion.div
+                    animate={isOpen ? 'open' : 'closed'}
+                    initial={false}
+                    variants={categoryMenuVariants}
+                    className="bg-slate-50 w-full lg:w-2/5 h-screen absolute right-0 px-8 pt-5"
+                >
                     <div className="w-full flex flex-row justify-between pb-2 border-b-red-950 border-b-2">
                         <h1 className="text-4xl font-gruppo font-semibold">Filter & Sort</h1>
                         <Button
@@ -104,13 +166,19 @@ const ButtonCategory = () => {
                                         <p className="text-xl tracking-wider font-semibold">
                                             Price
                                         </p>
-                                        <KeyboardArrowUpIcon />
+                                        <motion.div
+                                            animate={isPriceShown ? 'open' : 'closed'}
+                                            initial={false}
+                                            variants={categoryButtonVariants}
+                                        >
+                                            <KeyboardArrowUpIcon />
+                                        </motion.div>
                                     </div>
                                 </Button>
                                 <div
-                                    className={`flex-wrap gap-3 pb-4 border-b border-red-950 mb-6 ${
-                                        isPriceShown ? 'flex ' : 'hidden'
-                                    }`}
+                                    className={`flex-wrap gap-3 pb-4 border-b border-red-950 mb-6
+                                    ${isPriceShown ? 'flex ' : 'hidden'}
+                                    `}
                                 >
                                     {priceArray.map((checkbox, index) => (
                                         <label
@@ -143,7 +211,13 @@ const ButtonCategory = () => {
                                         <p className="text-xl tracking-wider font-semibold">
                                             Brand
                                         </p>
-                                        <KeyboardArrowUpIcon />
+                                        <motion.div
+                                            animate={isBrandShown ? 'open' : 'closed'}
+                                            initial={false}
+                                            variants={categoryButtonVariants}
+                                        >
+                                            <KeyboardArrowUpIcon />
+                                        </motion.div>
                                     </div>
                                 </Button>
                                 <div
@@ -172,7 +246,7 @@ const ButtonCategory = () => {
                             </Form>
                         )}
                     </Formik>
-                </div>
+                </motion.div>
             </motion.div>
 
             <Button
