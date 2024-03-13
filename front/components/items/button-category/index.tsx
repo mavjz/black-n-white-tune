@@ -5,11 +5,13 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Field, Form, Formik } from 'formik';
 import { motion } from 'framer-motion';
+import { useMedia } from 'use-media';
 
 const ButtonCategory = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isPriceShown, setIsPriceShown] = useState(false);
     const [isBrandShown, setIsBrandShown] = useState(false);
+    const isWide = useMedia({ minWidth: '1024px' });
 
     const priceArray = [
         { value: 'to1000', label: '0zł - 1.000zł' },
@@ -55,6 +57,7 @@ const ButtonCategory = () => {
     const categoryMenuVariants = {
         open: {
             x: 0,
+            y: 0,
             transition: {
                 bounce: 0,
                 duration: 1,
@@ -62,6 +65,24 @@ const ButtonCategory = () => {
         },
         closed: {
             x: '100%',
+            y: 0,
+            transition: {
+                bounce: 0,
+                duration: 0.5,
+            },
+        },
+    };
+
+    const categoryMenuMobileVariants = {
+        open: {
+            y: 0,
+            transition: {
+                bounce: 0,
+                duration: 1,
+            },
+        },
+        closed: {
+            y: '-100%',
             transition: {
                 bounce: 0,
                 duration: 0.5,
@@ -126,7 +147,7 @@ const ButtonCategory = () => {
                 <motion.div
                     animate={isOpen ? 'open' : 'closed'}
                     initial={false}
-                    variants={categoryMenuVariants}
+                    variants={isWide ? categoryMenuVariants : categoryMenuMobileVariants}
                     className="bg-slate-50 w-full lg:w-2/5 h-screen absolute right-0 px-8 pt-5 overflow-y-scroll"
                 >
                     <div className="w-full flex flex-row justify-between pb-2 border-b-red-950 border-b-2">
