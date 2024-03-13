@@ -17,6 +17,7 @@ const Button = ({
     onClick,
     buttonType,
     disabled,
+    classNameFramed,
 }: ButtonType) => {
     return (
         <React.Fragment>
@@ -33,7 +34,12 @@ const Button = ({
             ) : isLink ? (
                 isImage ? (
                     <Link href={link}>
-                        <ImageFramed src={image} className={className} alt={alt} />
+                        <ImageFramed
+                            src={image}
+                            className={className}
+                            classNameFramed={classNameFramed}
+                            alt={alt}
+                        />
                     </Link>
                 ) : (
                     <div className={className}>
@@ -49,7 +55,12 @@ const Button = ({
                     type={buttonType}
                     disabled={disabled}
                 >
-                    <ImageFramed className={className} src={image} alt={alt} />
+                    <ImageFramed
+                        className={className}
+                        classNameFramed={classNameFramed}
+                        src={image}
+                        alt={alt}
+                    />
                 </button>
             ) : (
                 <button

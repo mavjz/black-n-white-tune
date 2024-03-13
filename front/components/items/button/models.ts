@@ -38,6 +38,7 @@ export type ButtonType = {
               isMUIIcon?: false;
               children?: never;
               className: string;
+              classNameFramed?: string;
           }
         | {
               isImage?: false;
@@ -46,6 +47,7 @@ export type ButtonType = {
               text: string;
               isMUIIcon?: false;
               children?: never;
+              classNameFramed?: never;
           }
         | {
               isImage?: false;
@@ -54,5 +56,6 @@ export type ButtonType = {
               text?: never;
               isMUIIcon: true;
               children: React.ReactNode;
+              classNameFramed?: never;
           }
     );

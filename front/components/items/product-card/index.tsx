@@ -37,7 +37,8 @@ const ProductCard = ({ image, link, name }: ProductCardType) => {
                     alt={name}
                     isLink
                     link={link}
-                    className="h-96 md:h-72 w-full md:w-72 object-cover"
+                    className="object-cover"
+                    classNameFramed="h-96 md:h-72 w-full md:w-72"
                 />
             </motion.div>
             <div
