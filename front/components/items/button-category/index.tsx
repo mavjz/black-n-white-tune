@@ -86,24 +86,25 @@ const ButtonCategory = () => {
         },
     };
 
-    // const categoryOptionsVariants = {
-    //     open: {
-    //         display: 'flex',
-    //         y: 0,
-    //         transition: {
-    //             bounce: 0,
-    //             duration: 1,
-    //         },
-    //     },
-    //     closed: {
-    //         display: 'none',
-    //         y: '-100%',
-    //         transition: {
-    //             bounce: 0,
-    //             duration: 0.5,
-    //         },
-    //     },
-    // };
+    const categoryOptionsVariants = {
+        open: {
+            display: 'flex',
+            height: 'auto',
+            transition: {
+                bounce: 0,
+                duration: 0.5,
+            },
+        },
+        closed: {
+            display: 'none',
+            height: 0,
+            transition: {
+                bounce: 0,
+                duration: 0.5,
+                display: { delay: 0.5 },
+            },
+        },
+    };
 
     useEffect(() => {
         document.body.classList.add('overflow-x-hidden');
@@ -126,7 +127,7 @@ const ButtonCategory = () => {
                     animate={isOpen ? 'open' : 'closed'}
                     initial={false}
                     variants={categoryMenuVariants}
-                    className="bg-slate-50 w-full lg:w-2/5 h-screen absolute right-0 px-8 pt-5"
+                    className="bg-slate-50 w-full lg:w-2/5 h-screen absolute right-0 px-8 pt-5 overflow-y-scroll"
                 >
                     <div className="w-full flex flex-row justify-between pb-2 border-b-red-950 border-b-2">
                         <h1 className="text-4xl font-gruppo font-semibold">Filter & Sort</h1>
@@ -175,10 +176,11 @@ const ButtonCategory = () => {
                                         </motion.div>
                                     </div>
                                 </Button>
-                                <div
-                                    className={`flex-wrap gap-3 pb-4 border-b border-red-950 mb-6
-                                    ${isPriceShown ? 'flex ' : 'hidden'}
-                                    `}
+                                <motion.div
+                                    animate={isPriceShown ? 'open' : 'closed'}
+                                    initial={false}
+                                    variants={categoryOptionsVariants}
+                                    className="flex-wrap gap-3 pb-4 border-b border-red-950 mb-6 overflow-hidden"
                                 >
                                     {priceArray.map((checkbox, index) => (
                                         <label
@@ -197,7 +199,7 @@ const ButtonCategory = () => {
                                             <span>{checkbox.label}</span>
                                         </label>
                                     ))}
-                                </div>
+                                </motion.div>
                                 <Button
                                     isMUIIcon
                                     buttonType="button"
@@ -220,10 +222,11 @@ const ButtonCategory = () => {
                                         </motion.div>
                                     </div>
                                 </Button>
-                                <div
-                                    className={`flex-wrap gap-3 pb-4 border-b border-red-950 mb-6 ${
-                                        isBrandShown ? 'flex ' : 'hidden'
-                                    }`}
+                                <motion.div
+                                    animate={isBrandShown ? 'open' : 'closed'}
+                                    initial={false}
+                                    variants={categoryOptionsVariants}
+                                    className="flex-wrap gap-3 pb-4 border-b border-red-950 mb-6 overflow-hidden"
                                 >
                                     {brandArray.map((brand, index) => (
                                         <label
@@ -242,7 +245,7 @@ const ButtonCategory = () => {
                                             <span>{brand}</span>
                                         </label>
                                     ))}
-                                </div>
+                                </motion.div>
                             </Form>
                         )}
                     </Formik>
