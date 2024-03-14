@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Button from '../button';
+import Button from '../../items/button';
 import TuneIcon from '@mui/icons-material/Tune';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Field, Form, Formik } from 'formik';
 import { motion } from 'framer-motion';
 import { useMedia } from 'use-media';
+import ButtonDetails from '../../items/button-details';
 
 const ButtonCategory = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -90,43 +90,6 @@ const ButtonCategory = () => {
         },
     };
 
-    const categoryButtonVariants = {
-        open: {
-            rotate: 180,
-            transition: {
-                bounce: 0,
-                duration: 0.3,
-            },
-        },
-        closed: {
-            rotate: 0,
-            transition: {
-                bounce: 0,
-                duration: 0.3,
-            },
-        },
-    };
-
-    const categoryOptionsVariants = {
-        open: {
-            display: 'flex',
-            height: 'auto',
-            transition: {
-                bounce: 0,
-                duration: 0.5,
-            },
-        },
-        closed: {
-            display: 'none',
-            height: 0,
-            transition: {
-                bounce: 0,
-                duration: 0.5,
-                display: { delay: 0.5 },
-            },
-        },
-    };
-
     useEffect(() => {
         document.body.classList.add('overflow-x-hidden');
         if (isOpen) {
@@ -175,41 +138,21 @@ const ButtonCategory = () => {
                                     <option value="cheap">Price low to high</option>
                                     <option value="expensive">Price high to low</option>
                                 </Field>
-                                <Button
-                                    isMUIIcon
-                                    buttonType="button"
-                                    onClick={() => setIsPriceShown(!isPriceShown)}
-                                    className="w-full"
-                                    buttonClassName={`${
-                                        isPriceShown ? 'pb-4' : 'pb-2 border-b border-red-950 mb-5'
-                                    }`}
-                                >
-                                    <div className="w-full flex flex-row justify-between">
-                                        <p className="text-xl tracking-wider font-semibold">
-                                            Price
-                                        </p>
-                                        <motion.div
-                                            animate={isPriceShown ? 'open' : 'closed'}
-                                            initial={false}
-                                            variants={categoryButtonVariants}
-                                        >
-                                            <KeyboardArrowUpIcon />
-                                        </motion.div>
-                                    </div>
-                                </Button>
-                                <motion.div
-                                    animate={isPriceShown ? 'open' : 'closed'}
-                                    initial={false}
-                                    variants={categoryOptionsVariants}
-                                    className="flex-wrap gap-3 pb-4 border-b border-red-950 mb-6 overflow-hidden"
+                                <ButtonDetails
+                                    openCloseFn={() => setIsPriceShown(!isPriceShown)}
+                                    title="Price"
+                                    isOpen={isPriceShown}
                                 >
                                     {priceArray.map((checkbox, index) => (
                                         <label
                                             key={index}
                                             htmlFor="price"
                                             className={`border-2 border-red-950 rounded-full px-5 py-2 relative
-                                ${values.price.includes(checkbox.value) && 'bg-red-950 text-white'}
-                                `}
+                                            ${
+                                                values.price.includes(checkbox.value) &&
+                                                'bg-red-950 text-white'
+                                            }
+                                            `}
                                         >
                                             <Field
                                                 type="checkbox"
@@ -220,42 +163,22 @@ const ButtonCategory = () => {
                                             <span>{checkbox.label}</span>
                                         </label>
                                     ))}
-                                </motion.div>
-                                <Button
-                                    isMUIIcon
-                                    buttonType="button"
-                                    onClick={() => setIsBrandShown(!isBrandShown)}
-                                    className="w-full"
-                                    buttonClassName={`${
-                                        isBrandShown ? 'pb-4' : 'pb-2 border-b border-red-950 mb-5'
-                                    }`}
-                                >
-                                    <div className="w-full flex flex-row justify-between">
-                                        <p className="text-xl tracking-wider font-semibold">
-                                            Brand
-                                        </p>
-                                        <motion.div
-                                            animate={isBrandShown ? 'open' : 'closed'}
-                                            initial={false}
-                                            variants={categoryButtonVariants}
-                                        >
-                                            <KeyboardArrowUpIcon />
-                                        </motion.div>
-                                    </div>
-                                </Button>
-                                <motion.div
-                                    animate={isBrandShown ? 'open' : 'closed'}
-                                    initial={false}
-                                    variants={categoryOptionsVariants}
-                                    className="flex-wrap gap-3 pb-4 border-b border-red-950 mb-6 overflow-hidden"
+                                </ButtonDetails>
+                                <ButtonDetails
+                                    openCloseFn={() => setIsBrandShown(!isBrandShown)}
+                                    title="Brand"
+                                    isOpen={isBrandShown}
                                 >
                                     {brandArray.map((brand, index) => (
                                         <label
                                             key={index}
                                             htmlFor="brand"
                                             className={`border-2 border-red-950 rounded-full px-5 py-2 relative
-                                ${values.brand.includes(brand) && 'bg-red-950 text-white'}
-                                `}
+                                            ${
+                                                values.brand.includes(brand) &&
+                                                'bg-red-950 text-white'
+                                            }
+                                            `}
                                         >
                                             <Field
                                                 type="checkbox"
@@ -266,7 +189,7 @@ const ButtonCategory = () => {
                                             <span>{brand}</span>
                                         </label>
                                     ))}
-                                </motion.div>
+                                </ButtonDetails>
                             </Form>
                         )}
                     </Formik>

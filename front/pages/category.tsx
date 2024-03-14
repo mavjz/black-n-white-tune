@@ -1,5 +1,5 @@
 import ProductCategoryHolder from '@/components/container/product-category-holder';
-import ButtonCategory from '@/components/items/button-category';
+import ButtonCategory from '@/components/container/button-category';
 import React from 'react';
 
 const Category = ({ category }) => {
