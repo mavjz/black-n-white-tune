@@ -40,15 +40,15 @@ export default function Home() {
             </h1>
             <Carousel
                 logos={[
-                    { src: '/media/piano-logos/bechstein.png', alt: 'Bechstein' },
-                    { src: '/media/piano-logos/bluthner.png', alt: 'Bluthner' },
-                    { src: '/media/piano-logos/bosendorfer.png', alt: 'Bosendorfer' },
-                    { src: '/media/piano-logos/erard.png', alt: 'Erard' },
-                    { src: '/media/piano-logos/fazioli.png', alt: 'Fazioli' },
-                    { src: '/media/piano-logos/pleyel.svg', alt: 'Pleyel' },
-                    { src: '/media/piano-logos/shigeru.png', alt: 'Shigeru Kawai' },
-                    { src: '/media/piano-logos/steinway.png', alt: 'Steinway' },
-                    { src: '/media/piano-logos/yamaha.png', alt: 'Yamaha' },
+                    { src: '/media/piano-logos/bechstein.png', alt: 'Bechstein', link: '/' },
+                    { src: '/media/piano-logos/bluthner.png', alt: 'Bluthner', link: '/' },
+                    { src: '/media/piano-logos/bosendorfer.png', alt: 'Bosendorfer', link: '/' },
+                    { src: '/media/piano-logos/erard.png', alt: 'Erard', link: '/' },
+                    { src: '/media/piano-logos/fazioli.png', alt: 'Fazioli', link: '/' },
+                    { src: '/media/piano-logos/pleyel.svg', alt: 'Pleyel', link: '/' },
+                    { src: '/media/piano-logos/shigeru.png', alt: 'Shigeru Kawai', link: '/' },
+                    { src: '/media/piano-logos/steinway.png', alt: 'Steinway', link: '/' },
+                    { src: '/media/piano-logos/yamaha.png', alt: 'Yamaha', link: '/' },
                 ]}
             />
             <ProductArticle

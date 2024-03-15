@@ -12,7 +12,7 @@ const Product = ({ product, photos }) => {
     product = 'F122';
     return (
         <div>
-            <div className="w-full h-fit relative flex flex-row">
+            <div className="w-full h-fit relative flex flex-row mb-10">
                 <div className="w-2/3 mt-5 flex flex-col place-items-center justify-center gap-y-4">
                     {photos.map((photo, index) => (
                         <ImageFramed

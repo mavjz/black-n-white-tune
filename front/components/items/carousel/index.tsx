@@ -5,6 +5,7 @@ import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { useMedia } from 'use-media';
+import Button from '../button';
 
 const Carousel = ({ logos }: CarouselType) => {
     const isWide = useMedia({ maxWidth: '768px' });
@@ -20,10 +21,13 @@ const Carousel = ({ logos }: CarouselType) => {
         >
             {logos.map((logo, index) => (
                 <SwiperSlide className="w-1/4 h-52 relative">
-                    <ImageFramed
+                    <Button
                         key={index}
+                        isImage
+                        isLink
+                        image={logo.src}
                         alt={logo.alt}
-                        src={logo.src}
+                        link={logo.link}
                         className="w-full h-52 object-contain"
                     />
                 </SwiperSlide>

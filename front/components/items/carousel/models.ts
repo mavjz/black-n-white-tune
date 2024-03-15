@@ -1,3 +1,3 @@
 export type CarouselType = {
-    logos: { alt: string; src: string }[];
+    logos: { alt: string; src: string; link: string }[];
 };
