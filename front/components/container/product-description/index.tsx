@@ -19,7 +19,7 @@ const ProductDescription = ({
     };
 
     return (
-        <div className="w-full md:w-1/3 flex flex-col">
+        <div className="sticky w-full h-fit md:w-1/3 right-0 top-10 flex flex-col">
             <div className="flex flex-col mt-6 pb-12 border-b border-red-950">
                 <h1 className="text-4xl font-gruppo font-black">{name}</h1>
                 <h3 className="text-lg text-red-950">{brand}</h3>
