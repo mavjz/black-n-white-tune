@@ -17,7 +17,7 @@ const Carousel = ({ logos }: CarouselType) => {
             loop
             speed={4000}
             autoplay={{ delay: 2000, disableOnInteraction: false, stopOnLastSlide: false }}
-            className="w-full h-52"
+            className="w-full h-52 mb-6"
         >
             {logos.map((logo, index) => (
                 <SwiperSlide className="w-1/4 h-52 relative">

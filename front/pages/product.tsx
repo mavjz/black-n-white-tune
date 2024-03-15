@@ -1,4 +1,5 @@
 import ProductDescription from '@/components/container/product-description';
+import Carousel from '@/components/items/carousel';
 import ImageFramed from '@/components/items/image-framed';
 import Newsletter from '@/components/items/newsletter';
 import React from 'react';
@@ -46,6 +47,20 @@ const Product = ({ product, photos }) => {
                     Fusce euismod magna eget neque ornare auctor."
                 />
             </div>
+            <h1 className="text-4xl mx-5 my-4 font-gruppo font-black border-b-2 border-red-950/[0.8] pb-1">
+                Our recommendation
+            </h1>
+            <Carousel
+                logos={[
+                    { src: '/media/piano-photos/chair.jpeg', alt: '', link: '/' },
+                    { src: '/media/piano-photos/electronic-piano.jpeg', alt: '', link: '/' },
+                    { src: '/media/piano-photos/gpiano-on-stage.jpeg', alt: '', link: '/' },
+                    { src: '/media/piano-photos/grand-piano.jpeg', alt: '', link: '/' },
+                    { src: '/media/piano-photos/upright-piano.jpeg', alt: '', link: '/' },
+                    { src: '/media/piano-photos/chair.jpeg', alt: '', link: '/' },
+                    { src: '/media/piano-photos/gpiano-in-saloon.jpeg', alt: '', link: '/' },
+                ]}
+            />
             <Newsletter />
         </div>
     );
