@@ -131,7 +131,7 @@ const Navbar = ({ pages }: NavbarType) => {
                         <PersonOutlineOutlinedIcon htmlColor="white" fontSize="medium" />
                     </Button>
 
-                    <Button isMUIIcon isLink link="/Shop-cart-link">
+                    <Button isMUIIcon isLink link="/shopping-cart">
                         <LocalMallOutlinedIcon htmlColor="white" fontSize="medium" />
                     </Button>
 
