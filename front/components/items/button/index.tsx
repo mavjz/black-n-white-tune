@@ -27,7 +27,12 @@ const Button = ({
                         {children}
                     </Link>
                 ) : (
-                    <button className={buttonClassName} onClick={onClick} type={buttonType}>
+                    <button
+                        className={buttonClassName}
+                        onClick={onClick}
+                        type={buttonType}
+                        disabled={disabled}
+                    >
                         {children}
                     </button>
                 )
