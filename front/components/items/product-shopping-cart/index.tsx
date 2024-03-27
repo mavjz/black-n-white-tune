@@ -3,6 +3,7 @@ import ImageFramed from '../image-framed';
 import Button from '../button';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { ProductShoppingCartType } from './models';
 
 const ProductShoppingCart = ({
@@ -17,15 +18,22 @@ const ProductShoppingCart = ({
     const [numberOfProduct, setNumberOfProduct] = useState(quantity);
     quantity = numberOfProduct;
 
+    const TEMPOnClick = () => {
+        console.log("I'm working!");
+    };
+
     return (
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row md:w-auto w-52">
             <ImageFramed
                 src={image}
                 alt={brand + ' ' + model}
                 className="object-cover"
                 classNameFramed="w-52 h-52"
             />
-            <div className="flex flex-col pl-8">
+            <div className="flex flex-col md:pl-8 mt-2 md:mt-0 relative">
+                <Button isMUIIcon onClick={TEMPOnClick} buttonClassName="w-fit absolute right-0">
+                    <DeleteForeverIcon className="text-red-950 text-right" />
+                </Button>
                 <Button
                     isLink
                     link={link}
